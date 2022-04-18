@@ -31,7 +31,7 @@ jobs:
             pwd
       
       - persist_to_workspace:
-          root: ./workspace
+          root: ~/workspace
           paths:
             - .
   configure-infrastructure:
