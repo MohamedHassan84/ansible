@@ -33,7 +33,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - .
+            - ~/workspace/*
   configure-infrastructure:
     #working_directory: /app
     docker:
@@ -60,14 +60,14 @@ jobs:
             #sudo systemd daemon-reload 
             pwd
       - attach_workspace:
-         at: .
+         at: ~/
       - run:
           name: Configure server
           command: |
             #cd /root/project/.circleci/ansible/
             pwd
             ls ~/
-            ls /project
+            ls ~/project
 
             #cat ~/workspace/.circleci/ansible/inventory.txt
             #ansible-playbook -i "~/app/.circleci/ansible/inventory.txt" configure-server.yml
