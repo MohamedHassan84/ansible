@@ -44,19 +44,19 @@ jobs:
           name: Install dependencies
           command: |
             sudo apt update
-            # sudo python3 -m pip install -U pip
-            #sudo apt update
-            #sudo apt upgrade
-            # pip install --user ansible
-            sudo apt install software-properties-common --force-yes
-            sudo add-apt-repository --yes ppa:ansible/ansible 
-            # sudo apt update
-            sudo apt install ansible --yes
+            # # sudo python3 -m pip install -U pip
+            # #sudo apt update
+            # #sudo apt upgrade
+            # # pip install --user ansible
+            # sudo apt install software-properties-common --force-yes
+            # sudo add-apt-repository --yes ppa:ansible/ansible 
+            # # sudo apt update
+            # sudo apt install ansible --yes
             sudo apt install tar gzip
             sudo apt install -yy less
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            sudo unzip awscliv2.zip
-            sudo ./aws/install
+            # curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            # sudo unzip awscliv2.zip
+            # sudo ./aws/install
             #sudo systemd daemon-reload 
             pwd
       - attach_workspace:
@@ -67,7 +67,9 @@ jobs:
             #cd /root/project/.circleci/ansible/
             pwd
             ls ~
-            cat ~/workspace/.circleci/ansible/inventory.txt
+            ls /
+
+            #cat ~/workspace/.circleci/ansible/inventory.txt
             #ansible-playbook -i "~/app/.circleci/ansible/inventory.txt" configure-server.yml
 
 # Invoke jobs via workflows
