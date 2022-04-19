@@ -31,9 +31,9 @@ jobs:
             pwd
       
       - persist_to_workspace:
-          root: ~/workspace
+          root: ~/
           paths:
-            - .
+            - workspace/*
   configure-infrastructure:
     #working_directory: /app
     docker:
@@ -52,15 +52,15 @@ jobs:
             # sudo add-apt-repository --yes ppa:ansible/ansible 
             # # sudo apt update
             # sudo apt install ansible --yes
-            sudo apt install tar gzip
-            sudo apt install -yy less
+            #sudo apt install tar gzip
+            #sudo apt install -yy less
             # curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             # sudo unzip awscliv2.zip
             # sudo ./aws/install
             #sudo systemd daemon-reload 
             pwd
       - attach_workspace:
-         at: workspace/
+         at: ~/
       - run:
           name: Configure server
           command: |
@@ -68,6 +68,7 @@ jobs:
             pwd
             ls ~/
             ls ~/project/workspace
+            ls ~/workspace
 
             #cat ~/workspace/.circleci/ansible/inventory.txt
             #ansible-playbook -i "~/app/.circleci/ansible/inventory.txt" configure-server.yml
