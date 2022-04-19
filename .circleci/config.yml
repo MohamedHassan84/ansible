@@ -29,11 +29,12 @@ jobs:
             echo "[web1]"> ~/workspace/.circleci/ansible/inventory.txt
             cat inventory.txt
             pwd
+            ls ~/
       
       - persist_to_workspace:
           root: ~/
           paths:
-            - ~/
+            - ~/workspace
   configure-infrastructure:
     #working_directory: /app
     docker:
