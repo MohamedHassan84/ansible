@@ -67,7 +67,7 @@ jobs:
             #cd /root/project/.circleci/ansible/
             pwd
             ls ~/
-            ls ~/project/
+            ls ~/workspace/
             ls /tmp
 
             #cat ~/workspace/.circleci/ansible/inventory.txt
