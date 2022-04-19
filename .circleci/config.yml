@@ -27,7 +27,7 @@ jobs:
           command: |
            # cd  ~/project/.circleci/ansible/
             echo "[web1]"> .circleci/inventory.txt
-            cat inventory.txt
+            cat .circleci/inventory.txt
             pwd
             ls ~/
       
@@ -70,6 +70,7 @@ jobs:
             ls ~/
             ls ~/project/
             cat ~/project/.circleci/inventory.txt
+            cat ~/project/inventory.txt
 
             #cat ~/workspace/.circleci/ansible/inventory.txt
             #ansible-playbook -i "~/app/.circleci/ansible/inventory.txt" configure-server.yml
