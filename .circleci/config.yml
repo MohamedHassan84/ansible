@@ -25,16 +25,16 @@ jobs:
       - run:
           name: Add back-end ip to ansible inventory
           command: |
-            cd  ~/workspace/.circleci/ansible/
-            echo "[web1]"> ~/workspace/.circleci/ansible/inventory.txt
+           # cd  ~/project/.circleci/ansible/
+            echo "[web1]"> ~/project/.circleci/ansible/inventory.txt
             cat inventory.txt
             pwd
             ls ~/
       
       - persist_to_workspace:
-          root: ~/workspace
+          root: ~/
           paths:
-            - .
+            - /project/.circleci/ansible/inventory.txt
   configure-infrastructure:
     #working_directory: /app
     docker:
@@ -61,15 +61,15 @@ jobs:
             #sudo systemd daemon-reload 
             pwd
       - attach_workspace:
-         at: ~/workspace
+         at: ~/
       - run:
           name: Configure server
           command: |
             #cd /root/project/.circleci/ansible/
             pwd
             ls ~/
-            ls ~/workspace/
-            ls /tmp
+            ls ~/project/
+            cat ~/project/.circleci/ansible/inventory.txt
 
             #cat ~/workspace/.circleci/ansible/inventory.txt
             #ansible-playbook -i "~/app/.circleci/ansible/inventory.txt" configure-server.yml
