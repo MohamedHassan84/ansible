@@ -33,7 +33,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ~/.
+            - ~/
   configure-infrastructure:
     #working_directory: /app
     docker:
