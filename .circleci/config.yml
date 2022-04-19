@@ -32,9 +32,9 @@ jobs:
             ls ~/
       
       - persist_to_workspace:
-          root: ~/
+          root: ~/workspace
           paths:
-            - ~/workspace
+            - .
   configure-infrastructure:
     #working_directory: /app
     docker:
