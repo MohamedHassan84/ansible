@@ -68,7 +68,7 @@ jobs:
             pwd
             ls ~/
             ls ~/project/
-            ls /
+            ls /tmp
 
             #cat ~/workspace/.circleci/ansible/inventory.txt
             #ansible-playbook -i "~/app/.circleci/ansible/inventory.txt" configure-server.yml
